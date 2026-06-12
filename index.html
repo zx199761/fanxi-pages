@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>凡喜 · 烘干限定礼盒选品方案（双方向）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    background: #f5f6f8;
+    color: #1a1a2e;
+    line-height: 1.6;
+    padding: 24px;
+  }
+  .container { max-width: 1300px; margin: 0 auto; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 40px 48px;
+    margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  .hero h2 {
+    font-size: 14px;
+    opacity: 0.7;
+    font-weight: 400;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-size: 36px;
+    font-weight: 800;
+    color: #e94560;
+  }
+  .stat-label { font-size: 12px; opacity: 0.7; }
+
+  /* Tag bar */
+  .tag-bar {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .cat-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .cat-tag .num {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 11px;
+  }
+  .tag-yuanqie { background: #e8f5e9; color: #2e7d32; }
+  .tag-yuanqie .num { background: #4caf50; }
+  .tag-shupian { background: #fff8e1; color: #e65100; }
+  .tag-shupian .num { background: #ff9800; }
+  .tag-chanrou { background: #e3f2fd; color: #1565c0; }
+  .tag-chanrou .num { background: #2196f3; }
+  .tag-moya { background: #fce4ec; color: #c62828; }
+  .tag-moya .num { background: #f44336; }
+  .tag-neizang { background: #f3e5f5; color: #7b1fa2; }
+  .tag-neizang .num { background: #9c27b0; }
+  .tag-jiechi { background: #e0f2f1; color: #00695c; }
+  .tag-jiechi .num { background: #00897b; }
+  .tag-herbal { background: #fef6e4; color: #8d6e00; }
+  .tag-herbal .num { background: #ffa726; }
+
+  /* Section */
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .badge {
+    background: #e94560;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  /* Direction label */
+  .direction-label {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .direction-label .dir-name {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 8px;
+    color: #fff;
+  }
+  .direction-label .dir-desc {
+    font-size: 13px;
+    color: #888;
+  }
+
+  /* Major direction header */
+  .major-dir-header {
+    padding: 32px 40px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .major-dir-header .mdh-icon {
+    font-size: 48px;
+    flex-shrink: 0;
+  }
+  .major-dir-header .mdh-content h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .major-dir-header .mdh-content p {
+    font-size: 14px;
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+  .major-dir-header .mdh-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .major-dir-header .mdh-tags span {
+    background: rgba(255,255,255,0.15);
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+  }
+  .dir-fbs { background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); }
+  .dir-herbal { background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 40%, #4caf50 100%); }
+
+  /* Plan card */
+  .plan-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .plan-grid-three {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 1100px) {
+    .plan-grid-three { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 900px) {
+    .plan-grid, .plan-grid-three { grid-template-columns: 1fr; }
+  }
+  .plan-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .plan-header {
+    padding: 24px 28px;
+    color: #fff;
+  }
+  .plan-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .plan-header p {
+    font-size: 13px;
+    opacity: 0.85;
+  }
+  .plan-body { padding: 0; }
+
+  /* Direction A sub-cards */
+  .plan-a-aw .plan-header { background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); }
+  .plan-a-ss .plan-header { background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
+  .plan-b .plan-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+  .plan-herbal .plan-header { background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 40%, #4caf50 100%); }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  thead th {
+    background: #fafafa;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 12px;
+    color: #888;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+  }
+  thead th:nth-child(3),
+  thead th:nth-child(4) { text-align: right; }
+  tbody tr {
+    transition: background 0.15s;
+  }
+  tbody tr:hover { background: #fafafa; }
+  tbody td {
+    padding: 11px 14px;
+    font-size: 13px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+  }
+  tbody td:nth-child(1) { width: 38px; text-align: center; }
+  tbody td:nth-child(2) { width: 80px; }
+  tbody td:nth-child(3) { font-weight: 600; min-width: 140px; }
+  tbody td:nth-child(4), tbody td:nth-child(5) { text-align: right; white-space: nowrap; }
+  tbody td:nth-child(6) { color: #888; font-size: 12px; }
+
+  .rank-num {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .rank-1 { background: linear-gradient(135deg, #e94560, #ff6b35); }
+  .rank-2 { background: linear-gradient(135deg, #ff9800, #ffb74d); }
+  .rank-3 { background: linear-gradient(135deg, #667eea, #764ba2); }
+
+  .cost-val { color: #e94560; font-weight: 700; font-size: 14px; }
+  .cost-sub { color: #999; font-size: 12px; }
+
+  /* Summary */
+  .summary-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #eee;
+    border-top: 2px solid #ddd;
+  }
+  .summary-item {
+    background: #fafafa;
+    padding: 16px;
+    text-align: center;
+  }
+  .summary-label {
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 4px;
+  }
+  .summary-val {
+    font-size: 22px;
+    font-weight: 800;
+    color: #e94560;
+  }
+  .summary-unit {
+    font-size: 12px;
+    color: #999;
+    font-weight: 400;
+  }
+
+  /* Common SKU note */
+  .common-note {
+    background: #f0f0f0;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  /* Season colors */
+  .row-spring { background: #f1f8e9; }
+  .row-summer { background: #fff3e0; }
+  .row-autumn { background: #fef9f0; }
+  .row-winter { background: #ede7f6; }
+
+  .season-badge {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .badge-spring { background: linear-gradient(135deg, #66bb6a, #43a047); }
+  .badge-summer { background: linear-gradient(135deg, #ff7043, #f4511e); }
+  .badge-autumn { background: linear-gradient(135deg, #ffa726, #fb8c00); }
+  .badge-winter { background: linear-gradient(135deg, #7e57c2, #5e35b1); }
+
+  /* Concept Box */
+  .concept-section {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+  @media (max-width: 800px) {
+    .concept-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .concept-card {
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+  .concept-card .season-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .concept-card .season-name {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .concept-card .season-organ {
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.8;
+    margin-bottom: 6px;
+  }
+  .concept-card .season-ingredient {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .concept-card .season-sku {
+    font-size: 12px;
+    opacity: 0.75;
+    margin-top: 4px;
+  }
+  .cc-spring { background: #e8f5e9; }
+  .cc-spring .season-name { color: #2e7d32; }
+  .cc-spring .season-ingredient { color: #1b5e20; }
+  .cc-summer { background: #fbe9e7; }
+  .cc-summer .season-name { color: #d84315; }
+  .cc-summer .season-ingredient { color: #bf360c; }
+  .cc-autumn { background: #fff8e1; }
+  .cc-autumn .season-name { color: #e65100; }
+  .cc-autumn .season-ingredient { color: #ef6c00; }
+  .cc-winter { background: #ede7f6; }
+  .cc-winter .season-name { color: #4527a0; }
+  .cc-winter .season-ingredient { color: #311b92; }
+
+  /* Status indicators */
+  .status-ok { color: #2e7d32; font-size: 12px; font-weight: 600; }
+  .status-warn { color: #e65100; font-size: 12px; font-weight: 600; }
+
+  /* Herb tag */
+  .herb-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 4px;
+  }
+  .herb-yanggan { background: #e8f5e9; color: #2e7d32; }
+  .herb-yangxin { background: #fbe9e7; color: #d84315; }
+  .herb-runfei { background: #fff8e1; color: #e65100; }
+  .herb-yangshen { background: #ede7f6; color: #4527a0; }
+
+  /* Divider */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ddd 20%, #ddd 80%, transparent);
+    margin: 40px 0 32px;
+  }
+
+  /* Compare */
+  .compare-section {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    overflow-x: auto;
+  }
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+  }
+  .compare-table thead th {
+    background: transparent;
+    padding: 8px 12px;
+    border-bottom: 2px solid #eee;
+    font-size: 13px;
+    color: #555;
+    white-space: nowrap;
+  }
+  .compare-table td {
+    padding: 10px 12px;
+    font-size: 13px;
+    border-bottom: 1px solid #f5f5f5;
+    vertical-align: top;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+
+  /* Decision */
+  .decision-box {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 16px;
+    padding: 32px;
+    color: #fff;
+  }
+  .decision-box h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .decision-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 700px) {
+    .decision-options { grid-template-columns: 1fr; }
+  }
+  .dec-opt {
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.2s;
+  }
+  .dec-opt:hover {
+    border-color: #e94560;
+    background: rgba(233,69,96,0.08);
+  }
+  .dec-opt h4 {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .dec-opt .dec-pros {
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.8;
+  }
+  .dec-opt .dec-pros span::before {
+    content: "✓ ";
+    color: #4caf50;
+    font-weight: bold;
+  }
+
+  .note-box {
+    background: #fffbe6;
+    border-left: 4px solid #faad14;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 24px;
+    font-size: 13px;
+    color: #856404;
+  }
+
+  /* Roadmap */
+  .roadmap-section {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .roadmap-timeline {
+    display: flex;
+    gap: 0;
+    margin-top: 16px;
+    position: relative;
+  }
+  @media (max-width: 700px) {
+    .roadmap-timeline { flex-direction: column; gap: 12px; }
+  }
+  .rm-node {
+    flex: 1;
+    text-align: center;
+    padding: 16px;
+    border-radius: 12px;
+    position: relative;
+  }
+  .rm-node .rm-season {
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0.7;
+    margin-bottom: 6px;
+  }
+  .rm-node .rm-label {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .rm-node .rm-detail {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .rm-aw { background: #fff3e0; }
+  .rm-aw .rm-label { color: #e65100; }
+  .rm-ss { background: #e8f5e9; }
+  .rm-ss .rm-label { color: #2e7d32; }
+
+  footer {
+    text-align: center;
+    color: #bbb;
+    font-size: 12px;
+    padding: 24px 0;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+  <h1>凡喜 · 烘干限定礼盒选品方案</h1>
+  <p>Fanxi · Dried Pet Snacks Gift Box — 双方向 · 30×10g / 10 SKU</p>
+  <div class="hero-stats">
+    <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">大方向</div></div>
+    <div class="stat-item"><div class="stat-num">10</div><div class="stat-label">SKU / 套</div></div>
+    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">共通 SKU</div></div>
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">限定品 / 方向</div></div>
+  </div>
+</div>
+
+<!-- ====================================================================== -->
+<!-- 方向一：不时不食 -->
+<!-- ====================================================================== -->
+<div class="major-dir-header dir-fbs">
+  <div class="mdh-icon">🍂</div>
+  <div class="mdh-content">
+    <h2>方向一 · 「不时不食」应季鲜食</h2>
+    <p>基于孔子「不时不食」饮食哲学——当季鲜果蔬自然成熟，食在当下。6款共通SKU + 4款季节果蔬，随季轮替。</p>
+    <div class="mdh-tags">
+      <span>叙事：不时不食 · 应季鲜食</span>
+      <span>目标：大众市场 · 日常鲜食</span>
+      <span>食材：当季鲜果蔬</span>
+    </div>
+  </div>
+</div>
+
+<!-- Category Tags -->
+<div style="margin-bottom: 24px;">
+  <div class="tag-bar">
+    <span class="cat-tag tag-yuanqie"><span class="num">2</span> 原切肉干</span>
+    <span class="cat-tag tag-moya"><span class="num">2</span> 磨牙</span>
+    <span class="cat-tag tag-chanrou"><span class="num">1</span> 缠肉/卷</span>
+    <span class="cat-tag tag-neizang"><span class="num">1</span> 内脏</span>
+    <span class="cat-tag tag-jiechi"><span class="num">1</span> 洁齿骨</span>
+    <span class="cat-tag tag-shupian"><span class="num">2</span> 薯片</span>
+    <span class="cat-tag tag-chanrou" style="background:#e8f5e9;color:#2e7d32;"><span class="num">1</span> 缠肉卷（果蔬）</span>
+  </div>
+</div>
+
+<!-- 子方案：两季交替 -->
+<div class="direction-label">
+  <span class="dir-name" style="background:linear-gradient(135deg,#ff6b35,#f7931e);">A-1 / A-2</span>
+  <span class="dir-desc">两季交替 · 秋冬 + 春夏各一盒，按季交替上线</span>
+</div>
+
+<div class="plan-grid">
+  <!-- A-1: 秋冬限定 -->
+  <div class="plan-card plan-a-aw">
+    <div class="plan-header">
+      <h3>🍂 A-1：秋冬限定礼盒</h3>
+      <p>不时不食 · 秋冬温暖浓郁 · 30×10g / 10 SKU</p>
+    </div>
+    <div class="plan-body">
+      <table>
+        <thead><tr><th>#</th><th>品类</th><th>产品名称</th><th>10g成本</th><th>×3包</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="rank-num rank-1">1</span></td>
+            <td><span class="cat-tag tag-jiechi">洁齿骨</span></td>
+            <td>鸭肉绕鳗鱼骨</td>
+            <td><span class="cost-val">¥0.95</span></td>
+            <td><span class="cost-sub">¥2.86</span></td>
+            <td>天然鳗鱼骨洁齿，鸭肉缠裹增香，形态独特</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num rank-2">2</span></td>
+            <td><span class="cat-tag tag-moya">磨牙</span></td>
+            <td>牛筋棒</td>
+            <td><span class="cost-val">¥0.62</span></td>
+            <td><span class="cost-sub">¥1.86</span></td>
+            <td>经典磨牙，韧性耐嚼，功能刚需</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num rank-3">3</span></td>
+            <td><span class="cat-tag tag-moya">磨牙</span></td>
+            <td>鸭肉甜甜圈（牛喉管）</td>
+            <td><span class="cost-val">¥0.74</span></td>
+            <td><span class="cost-sub">¥2.21</span></td>
+            <td>环形形态独特，缠肉工艺，视觉吸睛</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num">4</span></td>
+            <td><span class="cat-tag tag-yuanqie">原切</span></td>
+            <td>鸡肉干</td>
+            <td><span class="cost-val">¥0.73</span></td>
+            <td><span class="cost-sub">¥2.20</span></td>
+            <td>基础底盘，白肉刚需，供应链成熟</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num">5</span></td>
+            <td><span class="cat-tag tag-yuanqie">原切</span></td>
+            <td>鸭肉干</td>
+            <td><span class="cost-val">¥0.785</span></td>
+            <td><span class="cost-sub">¥2.36</span></td>
+            <td>基础底盘，第二大肉源，适口性好</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num">6</span></td>
+            <td><span class="cat-tag tag-neizang">内脏</span></td>
+            <td>猪宝片</td>
+            <td><span class="cost-val">¥0.87</span></td>
+            <td><span class="cost-sub">¥2.62</span></td>
+            <td>猪源差异化，薄片脆感，高适口性</td>
+          </tr>
+          <tr style="background:#fef9f0;">
+            <td><span class="rank-num" style="background:#ff9800;">秋</span></td>
+            <td><span class="cat-tag tag-shupian">薯片</span></td>
+            <td>鸭肉雪梨薯片</td>
+            <td><span class="cost-val">¥0.71</span></td>
+            <td><span class="cost-sub">¥2.14</span></td>
+            <td>秋季·润肺，雪梨清甜薄脆，淡黄白色系</td>
+          </tr>
+          <tr style="background:#fef9f0;">
+            <td><span class="rank-num" style="background:#ff9800;">秋</span></td>
+            <td><span class="cat-tag tag-chanrou">缠肉卷</span></td>
+            <td>鸭肉南瓜卷</td>
+            <td><span class="cost-val">¥0.77</span></td>
+            <td><span class="cost-sub">¥2.30</span></td>
+            <td>秋季·温养，金黄丰收色，经典缠肉</td>
+          </tr>
+          <tr style="background:#f5f0fe;">
+            <td><span class="rank-num" style="background:#9c27b0;">冬</span></td>
+            <td><span class="cat-tag tag-shupian">薯片</span></td>
+            <td>鸭肉胡萝卜薯片</td>
+            <td><span class="cost-val">¥0.71</span></td>
+            <td><span class="cost-sub">¥2.13</span></td>
+            <td>冬季·β-胡萝卜素护眼，橘红色系</td>
+          </tr>
+          <tr style="background:#f5f0fe;">
+            <td><span class="rank-num" style="background:#9c27b0;">冬</span></td>
+            <td><span class="cat-tag tag-chanrou">缠肉卷</span></td>
+            <td>鸭肉紫薯卷</td>
+            <td><span class="cost-val">¥0.77</span></td>
+            <td><span class="cost-sub">¥2.30</span></td>
+            <td>冬季·花青素抗氧化，深紫色高级感</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="summary-bar">
+        <div class="summary-item"><div class="summary-label">单品10g成本合计</div><div class="summary-val">¥7.66<span class="summary-unit"> / 10g×10</span></div></div>
+        <div class="summary-item"><div class="summary-label">30包总成本</div><div class="summary-val">¥22.98<span class="summary-unit"> / 30包</span></div></div>
+        <div class="summary-item"><div class="summary-label">单包平均成本</div><div class="summary-val">¥0.77<span class="summary-unit"> / 包</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- A-2: 春夏限定 -->
+  <div class="plan-card plan-a-ss">
+    <div class="plan-header">
+      <h3>🌱 A-2：春夏限定礼盒</h3>
+      <p>不时不食 · 春夏清新活力 · 30×10g / 10 SKU</p>
+    </div>
+    <div class="plan-body">
+      <table>
+        <thead><tr><th>#</th><th>品类</th><th>产品名称</th><th>10g成本</th><th>×3包</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="rank-num rank-1">1</span></td>
+            <td><span class="cat-tag tag-jiechi">洁齿骨</span></td>
+            <td>鸭肉绕鳗鱼骨</td>
+            <td><span class="cost-val">¥0.95</span></td>
+            <td><span class="cost-sub">¥2.86</span></td>
+            <td>天然鳗鱼骨洁齿，鸭肉缠裹增香，形态独特</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num rank-2">2</span></td>
+            <td><span class="cat-tag tag-moya">磨牙</span></td>
+            <td>牛筋棒</td>
+            <td><span class="cost-val">¥0.62</span></td>
+            <td><span class="cost-sub">¥1.86</span></td>
+            <td>经典磨牙，韧性耐嚼，功能刚需</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num rank-3">3</span></td>
+            <td><span class="cat-tag tag-moya">磨牙</span></td>
+            <td>鸭肉甜甜圈（牛喉管）</td>
+            <td><span class="cost-val">¥0.74</span></td>
+            <td><span class="cost-sub">¥2.21</span></td>
+            <td>环形形态独特，缠肉工艺，视觉吸睛</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num">4</span></td>
+            <td><span class="cat-tag tag-yuanqie">原切</span></td>
+            <td>鸡肉干</td>
+            <td><span class="cost-val">¥0.73</span></td>
+            <td><span class="cost-sub">¥2.20</span></td>
+            <td>基础底盘，白肉刚需，供应链成熟</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num">5</span></td>
+            <td><span class="cat-tag tag-yuanqie">原切</span></td>
+            <td>鸭肉干</td>
+            <td><span class="cost-val">¥0.785</span></td>
+            <td><span class="cost-sub">¥2.36</span></td>
+            <td>基础底盘，第二大肉源，适口性好</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num">6</span></td>
+            <td><span class="cat-tag tag-neizang">内脏</span></td>
+            <td>猪宝片</td>
+            <td><span class="cost-val">¥0.87</span></td>
+            <td><span class="cost-sub">¥2.62</span></td>
+            <td>猪源差异化，薄片脆感，高适口性</td>
+          </tr>
+          <tr style="background:#e8f5e9;">
+            <td><span class="rank-num" style="background:#4caf50;">春</span></td>
+            <td><span class="cat-tag tag-chanrou">缠肉卷</span></td>
+            <td>鸭肉西兰花卷</td>
+            <td><span class="cost-val">¥0.78</span></td>
+            <td><span class="cost-sub">¥2.34</span></td>
+            <td>春季·维C嫩绿感，星形截面独特</td>
+          </tr>
+          <tr style="background:#e8f5e9;">
+            <td><span class="rank-num" style="background:#4caf50;">春</span></td>
+            <td><span class="cat-tag tag-shupian">薯片</span></td>
+            <td>鸭肉秋葵薯片</td>
+            <td><span class="cost-val">¥0.72</span></td>
+            <td><span class="cost-sub">¥2.16</span></td>
+            <td>春季·星形截面视觉独特，清爽口感</td>
+          </tr>
+          <tr style="background:#e0f7fa;">
+            <td><span class="rank-num" style="background:#00bcd4;">夏</span></td>
+            <td><span class="cat-tag tag-shupian">薯片</span></td>
+            <td>鸭肉黄瓜薯片</td>
+            <td><span class="cost-val">¥0.71</span></td>
+            <td><span class="cost-sub">¥2.13</span></td>
+            <td>夏季·清爽解暑，浅绿色系</td>
+          </tr>
+          <tr style="background:#e0f7fa;">
+            <td><span class="rank-num" style="background:#00bcd4;">夏</span></td>
+            <td><span class="cat-tag tag-chanrou">缠肉卷</span></td>
+            <td>鸭肉椰子卷</td>
+            <td><span class="cost-val">¥0.721</span></td>
+            <td><span class="cost-sub">¥2.16</span></td>
+            <td>夏季·热带风情椰香，乳白色系</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="summary-bar">
+        <div class="summary-item"><div class="summary-label">单品10g成本合计</div><div class="summary-val">¥7.63<span class="summary-unit"> / 10g×10</span></div></div>
+        <div class="summary-item"><div class="summary-label">30包总成本</div><div class="summary-val">¥22.89<span class="summary-unit"> / 30包</span></div></div>
+        <div class="summary-item"><div class="summary-label">单包平均成本</div><div class="summary-val">¥0.76<span class="summary-unit"> / 包</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="common-note">* A-1与A-2共享6个共通SKU，仅替换4个果蔬品。按季节交替上线，无需同时备货两套。</div>
+
+<!-- 子方案：四季通用 -->
+<div class="direction-label" style="margin-top:40px;">
+  <span class="dir-name" style="background:linear-gradient(135deg,#667eea,#764ba2);">B</span>
+  <span class="dir-desc">四季通用 · 一盒涵盖春/夏/秋/冬，全年无需换品</span>
+</div>
+
+<div class="plan-grid">
+  <div class="plan-card plan-b">
+    <div class="plan-header">
+      <h3>🌿 B：四季限定礼盒</h3>
+      <p>不时不食 · 四季循环应季 · 30×10g / 10 SKU</p>
+    </div>
+    <div class="plan-body">
+      <table>
+        <thead><tr><th>#</th><th>品类</th><th>产品名称</th><th>10g成本</th><th>×3包</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="rank-num rank-1">1</span></td>
+            <td><span class="cat-tag tag-jiechi">洁齿骨</span></td>
+            <td>鸭肉绕鳗鱼骨</td>
+            <td><span class="cost-val">¥0.95</span></td>
+            <td><span class="cost-sub">¥2.86</span></td>
+            <td>天然鳗鱼骨洁齿，鸭肉缠裹增香，形态独特</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num rank-2">2</span></td>
+            <td><span class="cat-tag tag-moya">磨牙</span></td>
+            <td>牛筋棒</td>
+            <td><span class="cost-val">¥0.62</span></td>
+            <td><span class="cost-sub">¥1.86</span></td>
+            <td>经典磨牙，韧性耐嚼，功能刚需</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num rank-3">3</span></td>
+            <td><span class="cat-tag tag-moya">磨牙</span></td>
+            <td>鸭肉甜甜圈（牛喉管）</td>
+            <td><span class="cost-val">¥0.74</span></td>
+            <td><span class="cost-sub">¥2.21</span></td>
+            <td>环形形态独特，缠肉工艺，视觉吸睛</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num">4</span></td>
+            <td><span class="cat-tag tag-yuanqie">原切</span></td>
+            <td>鸡肉干</td>
+            <td><span class="cost-val">¥0.73</span></td>
+            <td><span class="cost-sub">¥2.20</span></td>
+            <td>基础底盘，白肉刚需，供应链成熟</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num">5</span></td>
+            <td><span class="cat-tag tag-yuanqie">原切</span></td>
+            <td>鸭肉干</td>
+            <td><span class="cost-val">¥0.785</span></td>
+            <td><span class="cost-sub">¥2.36</span></td>
+            <td>基础底盘，第二大肉源，适口性好</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num">6</span></td>
+            <td><span class="cat-tag tag-neizang">内脏</span></td>
+            <td>猪宝片</td>
+            <td><span class="cost-val">¥0.87</span></td>
+            <td><span class="cost-sub">¥2.62</span></td>
+            <td>猪源差异化，薄片脆感，高适口性</td>
+          </tr>
+          <tr style="background:#fef9f0;">
+            <td><span class="rank-num" style="background:#ff9800;">秋</span></td>
+            <td><span class="cat-tag tag-shupian">薯片</span></td>
+            <td>鸭肉雪梨薯片</td>
+            <td><span class="cost-val">¥0.71</span></td>
+            <td><span class="cost-sub">¥2.14</span></td>
+            <td>秋季·润肺，雪梨清甜薄脆，淡黄白色系</td>
+          </tr>
+          <tr style="background:#f5f0fe;">
+            <td><span class="rank-num" style="background:#9c27b0;">冬</span></td>
+            <td><span class="cat-tag tag-chanrou">缠肉卷</span></td>
+            <td>鸭肉紫薯卷</td>
+            <td><span class="cost-val">¥0.77</span></td>
+            <td><span class="cost-sub">¥2.30</span></td>
+            <td>冬季·花青素抗氧化，深紫色高级感</td>
+          </tr>
+          <tr style="background:#e8f5e9;">
+            <td><span class="rank-num" style="background:#4caf50;">春</span></td>
+            <td><span class="cat-tag tag-chanrou">缠肉卷</span></td>
+            <td>鸭肉西兰花卷</td>
+            <td><span class="cost-val">¥0.78</span></td>
+            <td><span class="cost-sub">¥2.34</span></td>
+            <td>春季·维C嫩绿感，星形截面独特</td>
+          </tr>
+          <tr style="background:#e0f7fa;">
+            <td><span class="rank-num" style="background:#00bcd4;">夏</span></td>
+            <td><span class="cat-tag tag-shupian">薯片</span></td>
+            <td>鸭肉黄瓜薯片</td>
+            <td><span class="cost-val">¥0.71</span></td>
+            <td><span class="cost-sub">¥2.13</span></td>
+            <td>夏季·清爽解暑，浅绿色系</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="summary-bar">
+        <div class="summary-item"><div class="summary-label">单品10g成本合计</div><div class="summary-val">¥7.67<span class="summary-unit"> / 10g×10</span></div></div>
+        <div class="summary-item"><div class="summary-label">30包总成本</div><div class="summary-val">¥23.02<span class="summary-unit"> / 30包</span></div></div>
+        <div class="summary-item"><div class="summary-label">单包平均成本</div><div class="summary-val">¥0.77<span class="summary-unit"> / 包</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:16px;">
+    <div style="background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);flex:1;">
+      <div style="font-size:14px;font-weight:700;margin-bottom:12px;color:#667eea;">B · 一盒四季</div>
+      <div style="font-size:13px;color:#555;line-height:1.8;">
+        4款果蔬对应4个季节，<strong>一盒通用全年</strong>。颜色梯度跨色系（淡黄→深紫→深绿→浅绿），四季分明。无需换季调品，库存管理简单。
+      </div>
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid #eee;">
+        <div style="font-size:12px;color:#999;margin-bottom:6px;">四季果蔬一览</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <span style="background:#fef9f0;color:#e65100;padding:3px 10px;border-radius:12px;font-size:12px;">🍂秋·雪梨薯片</span>
+          <span style="background:#f5f0fe;color:#7b1fa2;padding:3px 10px;border-radius:12px;font-size:12px;">❄️冬·紫薯卷</span>
+          <span style="background:#e8f5e9;color:#2e7d32;padding:3px 10px;border-radius:12px;font-size:12px;">🌱春·西兰花卷</span>
+          <span style="background:#e0f7fa;color:#00838f;padding:3px 10px;border-radius:12px;font-size:12px;">☀️夏·黄瓜薯片</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Roadmap: Direction A -->
+<div class="roadmap-section">
+  <div class="section-title">不时不食 · 两季交替节奏 <span class="badge">推荐</span></div>
+  <div class="roadmap-timeline">
+    <div class="rm-node rm-aw">
+      <div class="rm-season">8月 → 次年2月</div>
+      <div class="rm-label">🍂 秋冬礼盒（A-1）</div>
+      <div class="rm-detail">
+        雪梨薯片 / 南瓜卷<br>
+        胡萝卜薯片 / 紫薯卷<br>
+        <small style="color:#999;">覆盖中秋、双11、年货</small>
+      </div>
+    </div>
+    <div class="rm-node rm-ss">
+      <div class="rm-season">3月 → 7月</div>
+      <div class="rm-label">🌱 春夏礼盒（A-2）</div>
+      <div class="rm-detail">
+        西兰花卷 / 秋葵薯片<br>
+        黄瓜薯片 / 椰子卷<br>
+        <small style="color:#999;">覆盖春季焕新、618、暑期</small>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:16px;font-size:12px;color:#888;text-align:center;">
+    每盒颜色统一（秋冬暖色 / 春夏绿白），视觉主题感强；按季交替上线，库存压力分散；全年覆盖4季但分两盒执行，叙事完整
+  </div>
+</div>
+
+<!-- ====================================================================== -->
+<!-- 分隔线 -->
+<!-- ====================================================================== -->
+<div class="section-divider"></div>
+
+<!-- ====================================================================== -->
+<!-- 方向二：药食同源 -->
+<!-- ====================================================================== -->
+<div class="major-dir-header dir-herbal">
+  <div class="mdh-icon">🌿</div>
+  <div class="mdh-content">
+    <h2>方向二 · 「应季而养」药食同源</h2>
+    <p>基于中医「四时五脏」养身理论——春养肝、夏养心、秋润肺、冬养肾。6款共通SKU + 4款药食同源草本限定品。</p>
+    <div class="mdh-tags">
+      <span>叙事：应季而养 · 药食同源</span>
+      <span>目标：高端市场 · 功能性养身</span>
+      <span>食材：药食同源 + 中医食疗</span>
+    </div>
+  </div>
+</div>
+
+<!-- 药食同源四季概念 -->
+<div class="concept-section">
+  <div class="section-title">🌿 药食同源 · 四季养身概念</div>
+  <div style="font-size:13px;color:#888;margin-bottom:8px;">
+    基于中医「四时五脏」理论：春养肝、夏养心、秋润肺、冬养肾。四款限定品分别对应一个季节的养身需求，搭配药食同源食材。
+  </div>
+  <div class="concept-grid">
+    <div class="concept-card cc-spring">
+      <div class="season-icon">🌸</div>
+      <div class="season-name">春 · 养肝</div>
+      <div class="season-organ">肝属木，春主生发</div>
+      <div class="season-ingredient">蒲公英+菊花</div>
+      <div class="season-sku">蒲公英菊花草本鸭肉片</div>
+    </div>
+    <div class="concept-card cc-summer">
+      <div class="season-icon">☀️</div>
+      <div class="season-name">夏 · 养心</div>
+      <div class="season-organ">心属火，夏主清热</div>
+      <div class="season-ingredient">苦菊</div>
+      <div class="season-sku">鸭肉苦菊片</div>
+    </div>
+    <div class="concept-card cc-autumn">
+      <div class="season-icon">🍂</div>
+      <div class="season-name">秋 · 润肺</div>
+      <div class="season-organ">肺属金，秋主润燥</div>
+      <div class="season-ingredient">雪梨</div>
+      <div class="season-sku">鸭肉雪梨薯片</div>
+    </div>
+    <div class="concept-card cc-winter">
+      <div class="season-icon">❄️</div>
+      <div class="season-name">冬 · 养肾</div>
+      <div class="season-organ">肾属水，冬主藏精</div>
+      <div class="season-ingredient">山药</div>
+      <div class="season-sku">鸭肉山药卷</div>
+    </div>
+  </div>
+</div>
+
+<!-- 药食同源 SKU 表 -->
+<div class="plan-grid">
+  <div class="plan-card plan-herbal" style="grid-column: 1 / -1;">
+    <div class="plan-header">
+      <h3>🌿 「应季而养·药食同源」四季礼盒</h3>
+      <p>药食同源 · 四时养身 · 30×10g / 10 SKU · 全年通用</p>
+    </div>
+    <div class="plan-body">
+      <table>
+        <thead><tr><th>#</th><th>品类</th><th>产品名称</th><th>10g成本</th><th>×3包</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="rank-num rank-1">1</span></td>
+            <td><span class="cat-tag tag-jiechi">洁齿骨</span></td>
+            <td>鸭肉绕鳗鱼骨</td>
+            <td><span class="cost-val">¥0.95</span></td>
+            <td><span class="cost-sub">¥2.86</span></td>
+            <td>天然鳗鱼骨洁齿，鸭肉缠裹增香，形态独特</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num rank-2">2</span></td>
+            <td><span class="cat-tag tag-moya">磨牙</span></td>
+            <td>牛筋棒</td>
+            <td><span class="cost-val">¥0.62</span></td>
+            <td><span class="cost-sub">¥1.86</span></td>
+            <td>经典磨牙，韧性耐嚼，功能刚需</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num rank-3">3</span></td>
+            <td><span class="cat-tag tag-moya">磨牙</span></td>
+            <td>鸭肉甜甜圈（牛喉管）</td>
+            <td><span class="cost-val">¥0.74</span></td>
+            <td><span class="cost-sub">¥2.21</span></td>
+            <td>环形形态独特，缠肉工艺，视觉吸睛</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num">4</span></td>
+            <td><span class="cat-tag tag-yuanqie">原切</span></td>
+            <td>鸡肉干</td>
+            <td><span class="cost-val">¥0.73</span></td>
+            <td><span class="cost-sub">¥2.20</span></td>
+            <td>基础底盘，白肉刚需，供应链成熟</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num">5</span></td>
+            <td><span class="cat-tag tag-yuanqie">原切</span></td>
+            <td>鸭肉干</td>
+            <td><span class="cost-val">¥0.785</span></td>
+            <td><span class="cost-sub">¥2.36</span></td>
+            <td>基础底盘，第二大肉源，适口性好</td>
+          </tr>
+          <tr>
+            <td><span class="rank-num">6</span></td>
+            <td><span class="cat-tag tag-neizang">内脏</span></td>
+            <td>猪宝片</td>
+            <td><span class="cost-val">¥0.87</span></td>
+            <td><span class="cost-sub">¥2.62</span></td>
+            <td>猪源差异化，薄片脆感，高适口性</td>
+          </tr>
+
+          <!-- 药食同源四款 -->
+          <tr class="row-spring">
+            <td><span class="season-badge badge-spring">春</span></td>
+            <td><span class="cat-tag tag-herbal">草本片</span></td>
+            <td>蒲公英菊花草本鸭肉片 <span class="herb-tag herb-yanggan">养肝</span></td>
+            <td><span class="cost-val">¥0.90</span><br><span class="status-ok">在售</span></td>
+            <td><span class="cost-sub">¥2.70</span></td>
+            <td>蒲公英+菊花双料草本配方，清肝明目，淡黄绿色系</td>
+          </tr>
+          <tr class="row-summer">
+            <td><span class="season-badge badge-summer">夏</span></td>
+            <td><span class="cat-tag tag-herbal">草本片</span></td>
+            <td>鸭肉苦菊片 <span class="herb-tag herb-yangxin">养心</span></td>
+            <td><span class="cost-val">¥0.72</span><br><span class="status-warn">已有淘汰品</span></td>
+            <td><span class="cost-sub">¥2.16</span></td>
+            <td>苦菊微苦回甘，清热解暑，翠绿色系</td>
+          </tr>
+          <tr class="row-autumn">
+            <td><span class="season-badge badge-autumn">秋</span></td>
+            <td><span class="cat-tag tag-shupian">薯片</span></td>
+            <td>鸭肉雪梨薯片 <span class="herb-tag herb-runfei">润肺</span></td>
+            <td><span class="cost-val">¥0.71</span><br><span class="status-ok">在售</span></td>
+            <td><span class="cost-sub">¥2.14</span></td>
+            <td>雪梨清甜薄脆，润肺生津，淡黄白色系</td>
+          </tr>
+          <tr class="row-winter">
+            <td><span class="season-badge badge-winter">冬</span></td>
+            <td><span class="cat-tag tag-chanrou">缠肉卷</span></td>
+            <td>鸭肉山药卷 <span class="herb-tag herb-yangshen">养肾</span></td>
+            <td><span class="cost-val">¥0.60</span><br><span class="status-ok">在售</span></td>
+            <td><span class="cost-sub">¥1.81</span></td>
+            <td>山药健脾益肾，药食同源目录收录，乳白色系</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="summary-bar">
+        <div class="summary-item"><div class="summary-label">单品10g成本合计</div><div class="summary-val">¥7.88<span class="summary-unit"> / 10g×10</span></div></div>
+        <div class="summary-item"><div class="summary-label">30包总成本</div><div class="summary-val">¥23.65<span class="summary-unit"> / 30包</span></div></div>
+        <div class="summary-item"><div class="summary-label">单包平均成本</div><div class="summary-val">¥0.79<span class="summary-unit"> / 包</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================================== -->
+<!-- 两方向总览对比 -->
+<!-- ====================================================================== -->
+<div class="compare-section">
+  <div class="section-title">双方向对比总览</div>
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th style="width:140px;">对比维度</th>
+        <th style="background:#fff3e0;">方向一：不时不食</th>
+        <th style="background:#e8f5e9;">方向二：药食同源</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>核心叙事</strong></td>
+        <td style="color:#e65100;font-weight:600;">不时不食 · 应季鲜食</td>
+        <td style="color:#2e7d32;font-weight:600;">应季而养 · 药食同源</td>
+      </tr>
+      <tr>
+        <td><strong>概念来源</strong></td>
+        <td>孔子「不时不食」饮食哲学</td>
+        <td>中医「四时五脏」养身理论</td>
+      </tr>
+      <tr>
+        <td><strong>食材逻辑</strong></td>
+        <td>当季鲜果蔬，自然成熟时令</td>
+        <td>药食同源目录 + 中医食疗食材</td>
+      </tr>
+      <tr>
+        <td><strong>春季</strong></td>
+        <td>西兰花 / 秋葵 · 西兰花卷 / 秋葵薯片</td>
+        <td>蒲公英+菊花（养肝）· 蒲公英菊花草本鸭肉片</td>
+      </tr>
+      <tr>
+        <td><strong>夏季</strong></td>
+        <td>黄瓜 / 椰子 · 黄瓜薯片 / 椰子卷</td>
+        <td>苦菊（养心）· 鸭肉苦菊片</td>
+      </tr>
+      <tr>
+        <td><strong>秋季</strong></td>
+        <td>雪梨 / 南瓜 · 雪梨薯片 / 南瓜卷</td>
+        <td>雪梨（润肺）· 鸭肉雪梨薯片</td>
+      </tr>
+      <tr>
+        <td><strong>冬季</strong></td>
+        <td>胡萝卜 / 紫薯 · 胡萝卜薯片 / 紫薯卷</td>
+        <td>山药（养肾）· 鸭肉山药卷</td>
+      </tr>
+      <tr>
+        <td><strong>子方案</strong></td>
+        <td>A-1秋冬 / A-2春夏 / B四季通用</td>
+        <td>四季一盒 · 全年通用</td>
+      </tr>
+      <tr>
+        <td><strong>30包总成本</strong></td>
+        <td style="color:#e65100;font-weight:800;font-size:15px;">¥22.89 ~ 23.02</td>
+        <td style="color:#2e7d32;font-weight:800;font-size:15px;">¥23.65</td>
+      </tr>
+      <tr>
+        <td><strong>目标市场</strong></td>
+        <td>大众市场 · 日常鲜食</td>
+        <td>高端市场 · 功能性养身</td>
+      </tr>
+      <tr>
+        <td><strong>共通SKU</strong></td>
+        <td colspan="2" style="color:#999;">鸡肉干 / 鸭肉干 / 牛筋棒 / 鸭肉甜甜圈 / 猪宝片 / 鸭肉绕鳗鱼骨（6款完全相同）</td>
+      </tr>
+      <tr>
+        <td><strong>秋款重叠</strong></td>
+        <td colspan="2" style="color:#e65100;font-weight:600;">鸭肉雪梨薯片 —— 两方向共用同一SKU，降低供应链复杂度</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ====================================================================== -->
+<!-- 决策建议 -->
+<!-- ====================================================================== -->
+<div class="decision-box">
+  <h3>🎯 双方向协同策略</h3>
+  <div class="decision-options">
+    <div class="dec-opt">
+      <h4>方向一 · 不时不食</h4>
+      <div class="dec-pros">
+        <span>时令鲜食叙事，天然、应季、新鲜</span><br>
+        <span>秋冬+春夏两盒交替，全年覆盖</span><br>
+        <span>暖色系/绿白系视觉主题分明</span><br>
+        <span>定价亲民，覆盖大众市场</span><br>
+        <span>优先A-1秋冬礼盒首发打中秋/春节</span>
+      </div>
+    </div>
+    <div class="dec-opt">
+      <h4>方向二 · 药食同源</h4>
+      <div class="dec-pros">
+        <span>中医养身叙事，功能性差异化</span><br>
+        <span>一盒四季，全年通用无需换品</span><br>
+        <span>3/4款在售，供应链就绪度高</span><br>
+        <span>养身溢价，定位高端市场</span><br>
+        <span>春·秋·冬三季齐发，夏款后续跟进</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top:20px;background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);">
+    💡 <strong>两方向不互斥，可并行推进：</strong>「不时不食」主打大众日常鲜食，「药食同源」主打高端功能性养身，覆盖不同消费层级。6款共通SKU完全一致，秋款雪梨薯片两方向共用，供应链高度复用。品牌端形成「凡喜双线」矩阵叙事——鲜食养身，面面俱到。
+  </div>
+</div>
+
+<footer>凡喜 Fanxi · 烘干限定礼盒选品方案（双方向合并版）· 内部决策文件</footer>
+
+</div><!-- end container -->
+</body>
+</html>
