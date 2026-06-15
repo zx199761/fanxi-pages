@@ -90,10 +90,10 @@ tr.pending td:first-child { position: relative; }
 
 <div class="page-header">
   <h1>凡喜礼盒选品 · 成本核算终版</h1>
-  <p>数据来源：迪迪妈产品成本表（2026.6.6）| 规格：10g × 30袋 / 10-11 SKU</p>
+  <p>数据来源：迪迪妈产品成本表（2026.6.6）| 冻干 10g×25袋 | 烘干 10g×30袋</p>
   <div class="meta">
-    <div class="meta-item"><div class="val">❄️ 冻干</div><div class="lbl">10SKU方案</div></div>
-    <div class="meta-item"><div class="val">🔥 烘干</div><div class="lbl">11SKU方案</div></div>
+    <div class="meta-item"><div class="val">❄️ 冻干</div><div class="lbl">10SKU × 25袋</div></div>
+    <div class="meta-item"><div class="val">🔥 烘干</div><div class="lbl">10SKU × 30袋</div></div>
     <div class="meta-item"><div class="val">2026.6</div><div class="lbl">成本数据时间</div></div>
   </div>
 </div>
@@ -110,40 +110,31 @@ tr.pending td:first-child { position: relative; }
 
   <div class="summary-bar">
     <div class="sum-card fd-accent">
-      <div class="val">¥13.17</div>
-      <div class="lbl">10SKU合计（方案A）</div>
+      <div class="val">¥29.71</div>
+      <div class="lbl">每盒成本（25袋）</div>
     </div>
     <div class="sum-card green-accent">
-      <div class="val">¥39.52</div>
-      <div class="lbl">每盒30袋成本（方案A）</div>
+      <div class="val">¥3.96</div>
+      <div class="lbl">每袋单价</div>
     </div>
-    <div class="sum-card" style="border-top:3px solid #ffa502;">
-      <div class="val" style="color:#e65100;">¥11.23</div>
-      <div class="lbl">9确定SKU合计</div>
+    <div class="sum-card" style="border-top:3px solid #27ae60;">
+      <div class="val" style="color:#27ae60;">40.0%</div>
+      <div class="lbl">品牌毛利率</div>
     </div>
     <div class="sum-card" style="border-top:3px solid #7b1fa2;">
-      <div class="val" style="color:#7b1fa2;">3选1</div>
-      <div class="lbl">第10位待选（彩虹糖/酸奶/猪心）</div>
+      <div class="val" style="color:#7b1fa2;">10SKU</div>
+      <div class="lbl">25袋 / 盒</div>
     </div>
   </div>
 
-  <div class="pending-box" style="background:#fff3e0;border-left-color:#e65100;">
-    <strong>⚠️ 成本预警 & 定价策略：</strong><br>
-    当前9确定SKU成本 ¥11.23/10SKU，每盒30袋 ¥33.70。<br>
-    按门店售价¥99倒推：品牌供货价≈¥50（门店50%毛利），则品牌方毛利≈¥50-33.70=¥16.30（毛利率33%）。<br>
-    若门店会员价打8.5折（¥84）：品牌供货价仍¥50，门店毛利¥34（40%），品牌毛利¥16.30不变。<br>
-    <strong>结论：成本可控，但需压缩至¥10以下/10SKU才能给品牌方留足50%毛利空间。</strong>
-  </div>
-
-  <div class="pending-box">
-    <strong>⚠️ 待选说明：</strong>括号内 <strong>彩虹棒棒糖</strong>、<strong>蔓越莓酸奶冻干块</strong>、<strong>原切猪心冻干</strong> 三款为待选，从中选一个作为第10位SKU。<br>
-    · 选彩虹棒棒糖（¥1.94）→ 10SKU合计 ¥13.17，每盒 ¥39.52<br>
-    · 选蔓越莓酸奶（¥1.04）→ 10SKU合计 ¥12.28，每盒 ¥36.83<br>
-    · 选猪心冻干（¥1.97）→ 10SKU合计 ¥13.20，每盒 ¥39.61
+  <div class="pending-box" style="background:#e8f5e9;border-left-color:#27ae60;">
+    <strong>✅ 已定版：</strong>冻干礼盒 10SKU × 25袋，第10位选定 <strong>蔓越莓酸奶冻干块</strong>。<br>
+    门店售价 ¥99 → 品牌供货价 ¥49.50 → 品牌毛利 ¥19.79（毛利率 40%）。<br>
+    门店会员价 8.5折（¥84）→ 门店毛利 ¥34.50（41%），品牌毛利不变。
   </div>
 
   <div class="section">
-    <div class="section-title">❄️ 冻干礼盒 — 选品明细 & 成本</div>
+    <div class="section-title">❄️ 冻干礼盒 — 定版选品明细（10SKU × 25袋）</div>
     <table>
       <thead>
         <tr>
@@ -152,8 +143,9 @@ tr.pending td:first-child { position: relative; }
           <th>迪迪妈对应产品</th>
           <th>品类</th>
           <th>场景</th>
+          <th style="text-align:center; width:60px;">袋数</th>
           <th style="text-align:right; width:100px;">10g成本</th>
-          <th style="text-align:right; width:90px;">×3袋小计</th>
+          <th style="text-align:right; width:90px;">小计</th>
         </tr>
       </thead>
       <tbody>
@@ -162,7 +154,8 @@ tr.pending td:first-child { position: relative; }
           <td><strong>鸡肉粒冻干</strong></td>
           <td style="color:#666;font-size:13px;">原切-鸡肉粒冻干-50g</td>
           <td><span class="cat-tag c-base">原切基础</span></td>
-          <td>日常零食</td>
+          <td>日常零食·流量入口</td>
+          <td style="text-align:center;">3</td>
           <td style="text-align:right;"><span class="cost-val">¥0.93</span></td>
           <td style="text-align:right;">¥2.80</td>
         </tr>
@@ -172,6 +165,7 @@ tr.pending td:first-child { position: relative; }
           <td style="color:#666;font-size:13px;">冻干双色粒-猫草鱼油-50g</td>
           <td><span class="cat-tag c-func">功能粒</span></td>
           <td>排毛美毛</td>
+          <td style="text-align:center;">3</td>
           <td style="text-align:right;"><span class="cost-val">¥1.18</span></td>
           <td style="text-align:right;">¥3.54</td>
         </tr>
@@ -181,8 +175,9 @@ tr.pending td:first-child { position: relative; }
           <td style="color:#666;font-size:13px;">原切-带皮三文鱼冻干-50g</td>
           <td><span class="cat-tag c-seafood">海鲜原切</span></td>
           <td>Omega-3美毛</td>
+          <td style="text-align:center;">2</td>
           <td style="text-align:right;"><span class="cost-val" style="color:#e74c3c;">¥2.15</span></td>
-          <td style="text-align:right;">¥6.44</td>
+          <td style="text-align:right;">¥4.30</td>
         </tr>
         <tr>
           <td><strong>4</strong></td>
@@ -190,6 +185,7 @@ tr.pending td:first-child { position: relative; }
           <td style="color:#666;font-size:13px;">原切-鸡脖冻干-50g</td>
           <td><span class="cat-tag c-base">原切基础</span></td>
           <td>磨牙啃咬</td>
+          <td style="text-align:center;">3</td>
           <td style="text-align:right;"><span class="cost-val">¥1.19</span></td>
           <td style="text-align:right;">¥3.57</td>
         </tr>
@@ -199,8 +195,9 @@ tr.pending td:first-child { position: relative; }
           <td style="color:#666;font-size:13px;">生骨肉夹心冻干-莓莓鸡-50g</td>
           <td><span class="cat-tag c-rawbone">生骨肉</span></td>
           <td>高端营养</td>
+          <td style="text-align:center;">2</td>
           <td style="text-align:right;"><span class="cost-val">¥1.23</span></td>
-          <td style="text-align:right;">¥3.69</td>
+          <td style="text-align:right;">¥2.46</td>
         </tr>
         <tr>
           <td><strong>6</strong></td>
@@ -208,6 +205,7 @@ tr.pending td:first-child { position: relative; }
           <td style="color:#666;font-size:13px;">生骨肉磨牙冻干棒-鸡肉味-50g</td>
           <td><span class="cat-tag c-rawbone">生骨肉</span></td>
           <td>磨牙+营养</td>
+          <td style="text-align:center;">3</td>
           <td style="text-align:right;"><span class="cost-val">¥0.89</span></td>
           <td style="text-align:right;">¥2.67</td>
         </tr>
@@ -217,8 +215,9 @@ tr.pending td:first-child { position: relative; }
           <td style="color:#666;font-size:13px;">挚护系列-净口清冻干-50g</td>
           <td><span class="cat-tag c-func">轻功能</span></td>
           <td>口腔护理</td>
+          <td style="text-align:center;">2</td>
           <td style="text-align:right;"><span class="cost-val">¥1.14</span></td>
-          <td style="text-align:right;">¥3.42</td>
+          <td style="text-align:right;">¥2.28</td>
         </tr>
         <tr>
           <td><strong>8</strong></td>
@@ -226,8 +225,9 @@ tr.pending td:first-child { position: relative; }
           <td style="color:#666;font-size:13px;">挚护系列-心动力冻干-50g</td>
           <td><span class="cat-tag c-func">轻功能</span></td>
           <td>心脏健康</td>
+          <td style="text-align:center;">2</td>
           <td style="text-align:right;"><span class="cost-val">¥1.22</span></td>
-          <td style="text-align:right;">¥3.67</td>
+          <td style="text-align:right;">¥2.45</td>
         </tr>
         <tr>
           <td><strong>9</strong></td>
@@ -235,132 +235,48 @@ tr.pending td:first-child { position: relative; }
           <td style="color:#666;font-size:13px;">挚护系列-软骨素冻干-50g</td>
           <td><span class="cat-tag c-func">轻功能</span></td>
           <td>关节保健</td>
+          <td style="text-align:center;">2</td>
           <td style="text-align:right;"><span class="cost-val">¥1.26</span></td>
-          <td style="text-align:right;">¥3.77</td>
+          <td style="text-align:right;">¥2.51</td>
         </tr>
-        <tr class="pending">
-          <td><strong>10a</strong></td>
-          <td><strong>彩虹棒棒糖</strong><span class="pending-badge">待选A</span></td>
-          <td style="color:#666;font-size:13px;">彩虹棒棒糖-蔓越莓+猫草+鱼油+羊奶-25.2g(12个)</td>
-          <td><span class="cat-tag c-mold">模具颜值</span></td>
-          <td>多彩棒棒糖·开盒记忆点</td>
-          <td style="text-align:right;"><span class="cost-val">¥1.94</span></td>
-          <td style="text-align:right;">¥5.82</td>
-        </tr>
-        <tr class="pending">
-          <td><strong>10b</strong></td>
-          <td><strong>蔓越莓酸奶冻干块</strong><span class="pending-badge">待选B</span></td>
+        <tr>
+          <td><strong>10</strong></td>
+          <td><strong>蔓越莓酸奶冻干块</strong></td>
           <td style="color:#666;font-size:13px;">圣诞系列-蔓越莓酸奶冻干块-40g</td>
           <td><span class="cat-tag c-mold">模具颜值</span></td>
           <td>果蔬功能·视觉惊喜</td>
+          <td style="text-align:center;">3</td>
           <td style="text-align:right;"><span class="cost-val">¥1.04</span></td>
           <td style="text-align:right;">¥3.13</td>
         </tr>
-        <tr class="pending">
-          <td><strong>10c</strong></td>
-          <td><strong>原切猪心冻干</strong><span class="pending-badge">待选C</span></td>
-          <td style="color:#666;font-size:13px;">原切-猪心冻干-50g</td>
-          <td><span class="cat-tag c-organ">内脏</span></td>
-          <td>高适口性·铁+牛磺酸</td>
-          <td style="text-align:right;"><span class="cost-val" style="color:#e74c3c;">¥1.97</span></td>
-          <td style="text-align:right;">¥5.90</td>
-        </tr>
         <tr class="total-row">
-          <td colspan="5">✅ 9确定SKU合计（#1–#9）</td>
-          <td style="text-align:right;">¥11.23</td>
-          <td style="text-align:right;">¥33.70</td>
-        </tr>
-        <tr class="total-row">
-          <td colspan="5">方案A：+彩虹棒棒糖（10SKU）⭐ 推荐</td>
-          <td style="text-align:right;">¥13.17</td>
-          <td style="text-align:right;">¥39.52</td>
-        </tr>
-        <tr class="total-row">
-          <td colspan="5">方案B：+蔓越莓酸奶（10SKU）</td>
-          <td style="text-align:right;">¥12.28</td>
-          <td style="text-align:right;">¥36.83</td>
-        </tr>
-        <tr class="total-row">
-          <td colspan="5">方案C：+猪心冻干（10SKU）</td>
-          <td style="text-align:right;">¥13.20</td>
-          <td style="text-align:right;">¥39.61</td>
+          <td colspan="6">❄️ 冻干10SKU × 25袋 合计</td>
+          <td style="text-align:right;">—</td>
+          <td style="text-align:right;">¥29.71</td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <div class="section">
-    <div class="section-title">📊 冻干成本分布</div>
+    <div class="section-title">📊 冻干成本分布（25袋版）</div>
     <table>
       <thead>
-        <tr><th>SKU</th><th>成本可视化</th><th style="text-align:right;">10g成本</th></tr>
+        <tr><th>SKU</th><th>袋数</th><th>成本可视化</th><th style="text-align:right;">10g成本</th><th style="text-align:right;">小计</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td>鸡肉粒冻干</td>
-          <td><div class="cost-bar-wrap"><div class="cost-bar" style="width:43%;background:#54a0ff;"></div></div></td>
-          <td style="text-align:right;">¥0.93</td>
-        </tr>
-        <tr>
-          <td>生骨肉磨牙棒</td>
-          <td><div class="cost-bar-wrap"><div class="cost-bar" style="width:41%;background:#54a0ff;"></div></div></td>
-          <td style="text-align:right;">¥0.89</td>
-        </tr>
-        <tr>
-          <td>蔓越莓酸奶冻干 <span class="pending-badge">待选B</span></td>
-          <td><div class="cost-bar-wrap"><div class="cost-bar" style="width:48%;background:#feca57;"></div></div></td>
-          <td style="text-align:right;">¥1.04</td>
-        </tr>
-        <tr>
-          <td>净口清冻干</td>
-          <td><div class="cost-bar-wrap"><div class="cost-bar" style="width:53%;background:#54a0ff;"></div></div></td>
-          <td style="text-align:right;">¥1.14</td>
-        </tr>
-        <tr>
-          <td>双色粒猫草鱼油</td>
-          <td><div class="cost-bar-wrap"><div class="cost-bar" style="width:55%;background:#54a0ff;"></div></div></td>
-          <td style="text-align:right;">¥1.18</td>
-        </tr>
-        <tr>
-          <td>鸡脖冻干</td>
-          <td><div class="cost-bar-wrap"><div class="cost-bar" style="width:55%;background:#54a0ff;"></div></div></td>
-          <td style="text-align:right;">¥1.19</td>
-        </tr>
-        <tr>
-          <td>生骨肉夹心冻干</td>
-          <td><div class="cost-bar-wrap"><div class="cost-bar" style="width:57%;background:#54a0ff;"></div></div></td>
-          <td style="text-align:right;">¥1.23</td>
-        </tr>
-        <tr>
-          <td>软骨素冻干</td>
-          <td><div class="cost-bar-wrap"><div class="cost-bar" style="width:58%;background:#54a0ff;"></div></div></td>
-          <td style="text-align:right;">¥1.26</td>
-        </tr>
-        <tr>
-          <td>心动力冻干</td>
-          <td><div class="cost-bar-wrap"><div class="cost-bar" style="width:57%;background:#54a0ff;"></div></div></td>
-          <td style="text-align:right;">¥1.22</td>
-        </tr>
-        <tr>
-          <td>猪心冻干 <span class="pending-badge">待选C</span></td>
-          <td><div class="cost-bar-wrap"><div class="cost-bar" style="width:91%;background:#feca57;"></div></div></td>
-          <td style="text-align:right; color:#e74c3c;">¥1.97</td>
-        </tr>
-        <tr>
-          <td>彩虹棒棒糖 <span class="pending-badge">待选A⭐</span></td>
-          <td><div class="cost-bar-wrap"><div class="cost-bar" style="width:90%;background:#ad1457;"></div></div></td>
-          <td style="text-align:right;">¥1.94</td>
-        </tr>
-        <tr>
-          <td>原切三文鱼冻干</td>
-          <td><div class="cost-bar-wrap"><div class="cost-bar" style="width:100%;background:#ee5a24;"></div></div></td>
-          <td style="text-align:right; color:#e74c3c;">¥2.15</td>
-        </tr>
+        <tr><td>鸡肉粒冻干</td><td style="text-align:center;">3</td><td><div class="cost-bar-wrap"><div class="cost-bar" style="width:43%;background:#54a0ff;"></div></div></td><td style="text-align:right;">¥0.93</td><td style="text-align:right;">¥2.80</td></tr>
+        <tr><td>生骨肉磨牙棒</td><td style="text-align:center;">3</td><td><div class="cost-bar-wrap"><div class="cost-bar" style="width:41%;background:#54a0ff;"></div></div></td><td style="text-align:right;">¥0.89</td><td style="text-align:right;">¥2.67</td></tr>
+        <tr><td>蔓越莓酸奶冻干</td><td style="text-align:center;">3</td><td><div class="cost-bar-wrap"><div class="cost-bar" style="width:48%;background:#e8f5e9;"></div></div></td><td style="text-align:right;">¥1.04</td><td style="text-align:right;">¥3.13</td></tr>
+        <tr><td>净口清冻干</td><td style="text-align:center;">2</td><td><div class="cost-bar-wrap"><div class="cost-bar" style="width:53%;background:#54a0ff;"></div></div></td><td style="text-align:right;">¥1.14</td><td style="text-align:right;">¥2.28</td></tr>
+        <tr><td>双色粒猫草鱼油</td><td style="text-align:center;">3</td><td><div class="cost-bar-wrap"><div class="cost-bar" style="width:55%;background:#54a0ff;"></div></div></td><td style="text-align:right;">¥1.18</td><td style="text-align:right;">¥3.54</td></tr>
+        <tr><td>鸡脖冻干</td><td style="text-align:center;">3</td><td><div class="cost-bar-wrap"><div class="cost-bar" style="width:55%;background:#54a0ff;"></div></div></td><td style="text-align:right;">¥1.19</td><td style="text-align:right;">¥3.57</td></tr>
+        <tr><td>心动力冻干</td><td style="text-align:center;">2</td><td><div class="cost-bar-wrap"><div class="cost-bar" style="width:57%;background:#54a0ff;"></div></div></td><td style="text-align:right;">¥1.22</td><td style="text-align:right;">¥2.45</td></tr>
+        <tr><td>生骨肉夹心冻干</td><td style="text-align:center;">2</td><td><div class="cost-bar-wrap"><div class="cost-bar" style="width:57%;background:#54a0ff;"></div></div></td><td style="text-align:right;">¥1.23</td><td style="text-align:right;">¥2.46</td></tr>
+        <tr><td>软骨素冻干</td><td style="text-align:center;">2</td><td><div class="cost-bar-wrap"><div class="cost-bar" style="width:58%;background:#54a0ff;"></div></div></td><td style="text-align:right;">¥1.26</td><td style="text-align:right;">¥2.51</td></tr>
+        <tr><td>原切三文鱼冻干</td><td style="text-align:center;">2</td><td><div class="cost-bar-wrap"><div class="cost-bar" style="width:100%;background:#ee5a24;"></div></div></td><td style="text-align:right;color:#e74c3c;">¥2.15</td><td style="text-align:right;">¥4.30</td></tr>
       </tbody>
     </table>
-    <div style="margin-top:12px;padding:10px 14px;background:#f0f4ff;border-radius:8px;font-size:12px;color:#555;">
-      <strong>成本分布：</strong>9个确定SKU中，7个在¥1.0~1.3区间（主力区），三文鱼¥2.15为高价异常值。
-    </div>
   </div>
 
 </div><!-- /panel-fd -->
@@ -538,11 +454,11 @@ tr.pending td:first-child { position: relative; }
   <div class="section-title">⚖️ 冻干 vs 烘干 成本对比</div>
   <div class="compare-grid">
     <div class="compare-card" style="border-top:3px solid #1565c0;">
-      <h4>❄️ 冻干礼盒（10SKU）</h4>
-      <div class="big-num" style="color:#1565c0;">¥39.52</div>
-      <div class="sub">方案A（+彩虹棒棒糖）⭐ 推荐，每盒30袋</div>
-      <div class="sub" style="margin-top:4px;">— 方案B（+蔓越莓酸奶）：¥36.83/盒</div>
-      <div class="sub">— 方案C（+猪心）：¥39.61/盒</div>
+      <h4>❄️ 冻干礼盒（10SKU × 25袋）</h4>
+      <div class="big-num" style="color:#1565c0;">¥29.71</div>
+      <div class="sub">每盒25袋成本，门店售价 ¥99</div>
+      <div class="sub" style="margin-top:4px;">— 每袋单价 ¥3.96，品牌毛利 40%</div>
+      <div class="sub">— 门店供货价 ¥49.50，门店毛利 ¥49.50</div>
     </div>
     <div class="compare-card" style="border-top:3px solid #e65100;">
       <h4>🔥 烘干礼盒（10SKU）</h4>
@@ -569,29 +485,19 @@ tr.pending td:first-child { position: relative; }
           <td style="text-align:center;">10</td>
         </tr>
         <tr>
-          <td>每盒30袋成本</td>
-          <td style="text-align:center;">¥39.52（方案A推荐）</td>
-          <td style="text-align:center;">¥23.82</td>
+          <td>袋数</td>
+          <td style="text-align:center;">25袋</td>
+          <td style="text-align:center;">30袋</td>
         </tr>
         <tr>
-          <td>最贵单品</td>
-          <td style="text-align:center;">三文鱼 ¥2.15/10g</td>
-          <td style="text-align:center;">鸭肉雪梨卷 ¥0.96/10g</td>
+          <td>门店售价</td>
+          <td style="text-align:center;">¥99</td>
+          <td style="text-align:center;">¥79</td>
         </tr>
         <tr>
-          <td>均价/10g</td>
-          <td style="text-align:center;">¥1.32~1.42</td>
-          <td style="text-align:center;">¥0.79</td>
-        </tr>
-        <tr>
-          <td>不时不食果蔬SKU</td>
-          <td style="text-align:center;">0（待补充）</td>
-          <td style="text-align:center;">4个（南瓜/雪梨/黄瓜+草本）</td>
-        </tr>
-        <tr>
-          <td>适合定价区间</td>
-          <td style="text-align:center;">¥89 ~ ¥129</td>
-          <td style="text-align:center;">¥59 ~ ¥89</td>
+          <td>品牌毛利率</td>
+          <td style="text-align:center;">40%</td>
+          <td style="text-align:center;">52%</td>
         </tr>
       </tbody>
     </table>
